@@ -1,0 +1,48 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+/build/
+backend/build/
+dist/
+
+# Node / Electron
+node_modules/
+apps/web/dist/
+apps/web/node_modules/
+apps/desktop/node_modules/
+release/
+out/
+
+# Model weights (distributed via release, not git)
+models/*.pth
+models/*.pt
+models/*.onnx
+
+# Runtime data / logs
+*.log
+logs/
+runtime/
+.boxmask/
+uploads/
+exports/
+*.db
+*.db-wal
+*.db-shm
+
+# Generated screenshots / test fixtures
+docs/screenshot*.png
+backend/tests/fixtures/*
+!backend/tests/fixtures/.gitkeep
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local demo asset scratch (generated outputs live in docs/images)
+demo_work/

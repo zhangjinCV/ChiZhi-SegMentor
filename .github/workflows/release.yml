@@ -1,0 +1,38 @@
+name: Release (Windows)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    env:
+      CSC_IDENTITY_AUTO_DISCOVERY: "false"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Python deps
+        run: uv sync --extra dev --python 3.12
+      - name: Node deps
+        run: npm ci
+      - name: Frontend
+        run: npm run build:web
+      - name: Sidecar
+        run: uv run python scripts/build_backend.py
+      - name: Installer
+        run: npm run dist
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: chizhi-segmentor-windows
+          path: release/*
+          if-no-files-found: error

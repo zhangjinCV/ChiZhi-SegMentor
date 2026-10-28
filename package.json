@@ -1,0 +1,27 @@
+{
+  "name": "chizhi-segmentor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Chizhi SegMentor — box-prompted segmentation desktop workbench",
+  "workspaces": [
+    "apps/web",
+    "apps/desktop"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n api,web \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": ".venv/Scripts/python.exe -m boxmask --dev --port 8765",
+    "dev:web": "npm run dev -w @chizhi/segmentor-web",
+    "dev:desktop": "concurrently -k -n web,electron \"npm:dev:web\" \"wait-on http://127.0.0.1:5173 && npm run dev -w @chizhi/segmentor-desktop\"",
+    "build:web": "npm run build -w @chizhi/segmentor-web",
+    "build": "npm run build:web",
+    "start": "npm run start:prod -w @chizhi/segmentor-desktop",
+    "preview": "npm run build:web && npm run start",
+    "dist": "npm run dist -w @chizhi/segmentor-desktop"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6",
+    "cross-env": "^10.1.0",
+    "playwright": "^1.64.1",
+    "wait-on": "^9.5.1"
+  }
+}

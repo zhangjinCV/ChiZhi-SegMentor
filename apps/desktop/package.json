@@ -1,0 +1,19 @@
+{
+  "name": "@chizhi/segmentor-desktop",
+  "productName": "炽智 SegMentor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Chizhi SegMentor desktop shell",
+  "author": "CHIZHI LAB",
+  "main": "main.cjs",
+  "scripts": {
+    "dev": "node ../../scripts/electron.cjs .",
+    "start": "node ../../scripts/electron.cjs .",
+    "start:prod": "cross-env BOXMASK_SHELL_MODE=prod node ../../scripts/electron.cjs .",
+    "dist": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "45.1.0",
+    "electron-builder": "^26.18.0"
+  }
+}

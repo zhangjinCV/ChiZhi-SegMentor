@@ -1,0 +1,35 @@
+appId: com.chizhi.segmentor
+productName: 炽智 SegMentor
+copyright: Copyright © 2026 炽智实验室 CHIZHI LAB
+directories:
+  buildResources: build
+  output: ../../release
+files:
+  - main.cjs
+  - preload.cjs
+  - package.json
+extraResources:
+  - from: ../../apps/web/dist
+    to: web
+  - from: ../../models
+    to: models
+    filter:
+      - "*.pth"
+      - "*.md"
+  - from: ../../backend/dist/boxmask-backend
+    to: backend
+win:
+  executableName: ChizhiSegMentor
+  target:
+    - nsis
+    - portable
+  icon: build/icon.ico
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  shortcutName: 炽智 SegMentor
+  artifactName: "Chizhi-SegMentor-Setup-${version}.${ext}"
+portable:
+  artifactName: "Chizhi-SegMentor-${version}-portable.${ext}"

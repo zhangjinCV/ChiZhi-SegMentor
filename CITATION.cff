@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Chizhi SegMentor: box-prompted segmentation desktop workbench"
+version: 0.1.0
+date-released: 2026-10-28
+license: Apache-2.0
+authors:
+  - name: "CHIZHI LAB"
+    affiliation: "炽智实验室"
+type: software
+keywords:
+  - segmentation
+  - box prompt
+  - RepViT
+  - PyTorch
+  - Electron
+abstract: "A local-first desktop workbench for box-prompted segmentation with single-image and batch workflows."

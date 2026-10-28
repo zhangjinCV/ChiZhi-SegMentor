@@ -1,0 +1,53 @@
+name: Bug report
+description: 报告一个可复现的问题
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: 请先确认使用的是最新版本，并尽量提供最小复现步骤。
+  - type: input
+    id: version
+    attributes:
+      label: 版本
+      description: 应用版本 / commit
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: 系统
+      options:
+        - Windows 10
+        - Windows 11
+        - macOS
+        - Linux
+    validations:
+      required: true
+  - type: dropdown
+    id: device
+    attributes:
+      label: 推理设备
+      options:
+        - CPU
+        - CUDA
+        - 不确定
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: 1. 打开... 2. 导入... 3. 画框...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望结果
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 日志/截图
+      description: backend.log / desktop.log 或截图（注意脱敏）
