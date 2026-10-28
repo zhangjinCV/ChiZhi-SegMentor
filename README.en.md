@@ -165,6 +165,8 @@ Artifacts in `release/`:
 - `Chizhi-SegMentor-0.1.0-portable.exe` (portable)
 - `win-unpacked/ChizhiSegMentor.exe` (unpacked directory)
 
+Public download: [GitHub Release v0.1.0](https://github.com/zhangjinCV/ChiZhi-SegMentor/releases/tag/v0.1.0) (installers, portable build, and model checkpoint assets).
+
 The local build includes the frozen 39.8 MB checkpoint; an open-source release can also ship without weights so users choose a checkpoint on first launch. The installers are unsigned, so Windows SmartScreen will warn. See [docs/packaging.md](docs/packaging.md).
 
 ## Repository layout

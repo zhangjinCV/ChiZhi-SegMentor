@@ -165,6 +165,8 @@ npm run dist
 - `Chizhi-SegMentor-0.1.0-portable.exe`（便携版）
 - `win-unpacked/ChizhiSegMentor.exe`（免安装目录）
 
+公开下载：[GitHub Release v0.1.0](https://github.com/zhangjinCV/ChiZhi-SegMentor/releases/tag/v0.1.0)（安装包、便携版与模型权重附件）。
+
 当前本地构建包含冻结的 39.8MB 模型权重；开源 Release 也可以发布不带权重的版本，由用户首次启动选择 checkpoint。安装包未签名，Windows SmartScreen 会提示；详见 [docs/packaging.md](docs/packaging.md)。
 
 ## 目录
